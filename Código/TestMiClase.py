@@ -32,7 +32,22 @@ class TestMiClase(unittest.TestCase):
     def test_divisible_tempo_numero_uno(self):
         resultado = self.objeto.DivisibleTempo(1)
         self.assertEqual(resultado, [1])
+        
+    #Tests para VerificaListaCanciones
+    def test_cancion_1(self):
+        resultado = self.objeto.VerificaListaCanciones(["Canción 1"])
+        self.assertEqual(resultado, [True])
+    def test_cancion_3(self):
+        resultado = self.objeto.VerificaListaCanciones(["Canción 3"])
+        self.assertEqual(resultado, [False])
 
+    #Test para ObtieneMasBailable
+    def test_mas_disponible(self):
+        resultado = self.objeto.ObtieneMasBailable([0.8,0.7,0.3,0.5])
+        self.assertEqual(resultado, [0.8])
+    def test_no_lista(self):
+        resultado = self.objeto.ObtieneMasBailable("0.5")
+        self.assertEqual(resultado, [None])
 
 if __name__ == "__main__":
     unittest.main()
