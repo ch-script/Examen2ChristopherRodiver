@@ -42,6 +42,25 @@ class MiClase:
             if song is None:
                 return False
         return True
+    
+    def Encuentra(self, lista, elemento):
+        if not isinstance(elemento, list):
+            print("El elemento debe ser una lista de numeros enteros")
+            return False
+        for i in elemento:
+            if not isinstance(i, int):
+                print("Todos los elementos de la lista deben ser numeros enteros")
+                return False
+        return self.EncuentraAux(lista, elemento)
+    
+    def EncuentraAux(self, lista, elemento):
+        if not lista:  # Caso Base: NO hay elementos
+            return False
+        
+        if lista[0] == elemento: # Caso Iterativo: HAY elementos Y el primer elemento es igual al que buscamos
+            return True
+        
+        return self.EncuentraAux(lista[1:], elemento) # Se reduce cada elemento cortando el primero de la lista (recursion)
 
 
 ################################################################################################
