@@ -60,7 +60,14 @@ class TestMiClase(unittest.TestCase):
     def test_lista_vacia(self):
         resultado = self.objeto.VerificaListaCanciones([])
         self.assertEqual(resultado, False)  
-
+        
+    #Test para Encontrar
+    def test_encontrar_5(self):
+        resultado = self.objeto.Encuentra([1,2,3,4,"5"], "5")
+        self.assertEqual(resultado, False)  
+    def test_encontrar_5(self):
+        resultado = self.objeto.Encuentra([], 0)
+        self.assertEqual(resultado, False)
 
 if __name__ == "__main__":
     unittest.main()
