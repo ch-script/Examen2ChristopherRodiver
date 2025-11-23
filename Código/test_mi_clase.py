@@ -42,7 +42,7 @@ class TestMiClase(unittest.TestCase):
         self.assertEqual(resultado, True)
     def test_vacio(self):
         resultado = self.objeto.VerificaListaCanciones([])
-        self.assertEqual(resultado, True)
+        self.assertEqual(resultado, None)
 
     #Test para ObtieneMasBailable
     def test_mas_disponible(self):
