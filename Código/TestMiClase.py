@@ -42,7 +42,7 @@ class TestMiClase(unittest.TestCase):
         self.assertEqual(resultado, None)
     def test_vacio(self):
         resultado = self.objeto.VerificaListaCanciones([])
-        self.assertEqual(resultado, None)
+        self.assertEqual(resultado, False)
 
     #Test para ObtieneMasBailable
     def test_mas_disponible(self):
@@ -58,14 +58,14 @@ class TestMiClase(unittest.TestCase):
         self.assertEqual(resultado, 0.1)
 
     def test_lista_vacia(self):
-        resultado = self.objeto.VerificaListaCanciones([])
-        self.assertEqual(resultado, False)  
-        
+        resultado = self.objeto.ObtieneMasBailable([])
+        self.assertEqual(resultado, None)  
+
     #Test para Encontrar
     def test_encontrar_5(self):
         resultado = self.objeto.Encuentra([1,2,3,4,"5"], "5")
         self.assertEqual(resultado, False)  
-    def test_encontrar_5(self):
+    def test_encontrar_(self):
         resultado = self.objeto.Encuentra([], 0)
         self.assertEqual(resultado, False)
 
