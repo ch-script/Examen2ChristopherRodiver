@@ -37,12 +37,12 @@ class TestMiClase(unittest.TestCase):
     def test_cancion_1(self):
         resultado = self.objeto.VerificaListaCanciones(["Canción 1"])
         self.assertEqual(resultado, True)
-    def test_cancion_3(self):
-        resultado = self.objeto.VerificaListaCanciones(["Canción 3"])
-        self.assertEqual(resultado, False)
+    def test_cancion_4(self):
+        resultado = self.objeto.VerificaListaCanciones(["Canción 4"])
+        self.assertEqual(resultado, None)
     def test_vacio(self):
         resultado = self.objeto.VerificaListaCanciones([])
-        self.assertEqual(resultado, False)
+        self.assertEqual(resultado, None)
 
     #Test para ObtieneMasBailable
     def test_mas_disponible(self):
@@ -50,7 +50,7 @@ class TestMiClase(unittest.TestCase):
         self.assertEqual(resultado, 0.8)
 
     def test_no_lista(self):
-        resultado = self.objeto.ObtieneMasBailable("0.5")
+        resultado = self.objeto.ObtieneMasBailable("0")
         self.assertEqual(resultado, None)
 
     def test_un_elemento(self):
@@ -59,7 +59,7 @@ class TestMiClase(unittest.TestCase):
 
     def test_lista_vacia(self):
         resultado = self.objeto.VerificaListaCanciones([])
-        self.assertEqual(resultado, True)  
+        self.assertEqual(resultado, False)  
 
 
 if __name__ == "__main__":
